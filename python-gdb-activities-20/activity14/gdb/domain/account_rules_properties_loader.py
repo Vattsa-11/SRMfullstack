@@ -12,4 +12,20 @@ class AccountRulesPropertiesLoader:
         #   2. If the file does not exist, return an empty dict.
         #   3. Read it line by line (encoding="utf-8"); skip blank lines and lines starting with "#".
         #   4. Split each remaining "key=value" line on the FIRST "=" and store the stripped key and value strings.
+
+        rules = {}
+        file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "resources", "config", "rules", f"{account_type.lower()}.properties")
+        if not os.path.exists(file_path):
+            return rules
+
+        with open(file_path, "r", encoding="utf-8") as file:
+            for line in file:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                key, value = line.split("=", 1)
+                rules[key.strip()] = value.strip()
+
+        return rules
+    
         raise NotImplementedError("TODO: implement AccountRulesPropertiesLoader.load_rules()")

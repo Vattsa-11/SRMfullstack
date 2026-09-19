@@ -7,17 +7,21 @@ class AccountRulesEngine:
     #   properties with AccountRulesPropertiesLoader.load_rules(account_type) and returns the value
     #   for its key converted to float (0.0 when the key is missing).
 
+
     @staticmethod
     def get_minimum_balance(account_type: str) -> float:
         # TODO: Return the "minBalance" property as a float.
+        return float(AccountRulesPropertiesLoader.load_rules(account_type).get("minBalance", 0.0))
         raise NotImplementedError("TODO: implement AccountRulesEngine.get_minimum_balance()")
 
     @staticmethod
     def get_interest_rate(account_type: str) -> float:
         # TODO: Return the "interestRate" property as a float.
+        return float(AccountRulesPropertiesLoader.load_rules(account_type).get("interestRate", 0.0))
         raise NotImplementedError("TODO: implement AccountRulesEngine.get_interest_rate()")
 
     @staticmethod
     def get_overdraft_limit(account_type: str) -> float:
         # TODO: Return the "overdraftLimit" property as a float.
+        return float(AccountRulesPropertiesLoader.load_rules(account_type).get("overdraftLimit", 0.0))
         raise NotImplementedError("TODO: implement AccountRulesEngine.get_overdraft_limit()")
