@@ -8,8 +8,10 @@ class SalaryAccount(AbstractAccount):
 
     def calculate_interest(self) -> float:
         # TODO: Salary accounts earn no interest -- return 0.0 to fulfil the IAccount contract.
+        return 0.0
         raise NotImplementedError("TODO: implement SalaryAccount.calculate_interest()")
 
     def get_account_type(self) -> str:
         # TODO: Return this product's type name, "Salary".
+        return "SALARY"
         raise NotImplementedError("TODO: implement SalaryAccount.get_account_type()")

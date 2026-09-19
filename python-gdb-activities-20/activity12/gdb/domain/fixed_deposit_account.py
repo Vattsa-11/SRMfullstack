@@ -11,4 +11,4 @@ class FixedDepositAccount(AbstractAccount):
         return (self._balance * self._interest_rate * (self._tenure_months / 12.0)) / 100.0
 
     def get_account_type(self) -> str:
-        return "FixedDeposit"
+        return "FIXEDDEPOSIT"

@@ -15,7 +15,7 @@ class CurrentAccount(AbstractAccount):
         return 0.0
 
     def get_account_type(self) -> str:
-        return "Current"
+        return "CURRENT"
 
     def withdraw(self, amount: float) -> None:
         if self._status.lower() != "active":

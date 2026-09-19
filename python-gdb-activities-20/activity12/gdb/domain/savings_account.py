@@ -16,7 +16,7 @@ class SavingsAccount(AbstractAccount):
         return (self._balance * self._interest_rate) / 100.0
 
     def get_account_type(self) -> str:
-        return "Savings"
+        return "SAVINGS"
 
     def withdraw(self, amount: float) -> None:
         if self._status.lower() != "active":
