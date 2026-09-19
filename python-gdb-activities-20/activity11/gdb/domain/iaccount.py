@@ -8,4 +8,34 @@ class IAccount(ABC):
     #               display_account_info() -> None, validate_pin(entered_pin) -> bool, get_account_type() -> str
     #   Properties: account_number -> str, name -> str, age -> int, balance -> float, status -> str
     #               (stack @property on top of @abstractmethod for these)
-    pass
+    
+    @abstractmethod
+    def deposit(amount):
+        pass
+
+    def withdraw(amount):
+        pass
+
+    def calculate_interest():
+        return 0.0
+
+    def display_account_info():
+        pass
+
+    def validate_pin(entered_pin):
+        return True
+
+    def get_account_tyep():
+        return ""
+
+    @property
+    def account_number():
+        return ""
+    def name():
+        return ""
+    def age():
+        return 0
+    def balance():
+        return 0.0
+    def status():
+        return ""

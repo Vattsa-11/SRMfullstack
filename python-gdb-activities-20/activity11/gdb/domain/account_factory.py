@@ -18,4 +18,18 @@ class AccountFactory:
         #       "SALARY"       -> SalaryAccount(...)
         #       "FIXEDDEPOSIT" -> FixedDepositAccount(...)  with tenure_months=12, interest_rate=6.5
         #   - Any other value -> raise AccountException naming the unknown type
+
+        type = account_type.strip().upper()
+
+        if type == "SAVINGS":
+            return SavingsAccount(account_number, name, age, balance, status, pin, interest_rate=4.0, minimum_balance=1000.0)
+        elif type == "CURRENT":
+            return CurrentAccount(account_number, name, age, balance, status, pin, overdraft_limit=1000.0)
+        elif type == "SALARY":
+            return SalaryAccount(account_number, name, age, balance, status, pin)
+        elif type == "FIXEDDEPOSIT":
+            return FixedDepositAccount(account_number, name, age, balance, status, pin, tenure_months=12, interest_rate=6.5)
+        else:
+            AccountException("Unknown account type:" + account_type)
+        
         raise NotImplementedError("TODO: implement AccountFactory.create_account()")
